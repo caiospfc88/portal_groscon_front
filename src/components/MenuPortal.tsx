@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 import "./MenuPortal.css";
+import { AiOutlineHome } from "react-icons/ai";
+import { ItemMenu } from "../types/itemMenu";
+import { AiOutlineSafetyCertificate } from "react-icons/ai";
 
 const MenuPortal = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -9,15 +12,9 @@ const MenuPortal = () => {
     setActive(!active);
   };
 
-  const pagesList: Array<string> = [
-    "HOME",
-    "SEGURO BRADESCO",
-    "BI",
-    "COMISSÃO",
-    "RELATÓRIOS NEWCON",
-    "MURAL DE DADOS",
-    "WIKI GROSCON",
-    "USUÁRIOS",
+  const pagesList: Array<ItemMenu> = [
+    { name: "HOME", icon: <AiOutlineHome /> },
+    { name: "SEGURO BRADESCO", icon: <AiOutlineSafetyCertificate /> },
   ];
 
   return (
@@ -29,7 +26,9 @@ const MenuPortal = () => {
         <div className="list">
           <ul className="listItems">
             {pagesList.map((item) => (
-              <li className="item">{item}</li>
+              <li className="item">
+                {item.icon} - {item.name}
+              </li>
             ))}
           </ul>
         </div>
