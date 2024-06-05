@@ -66,21 +66,22 @@ body,
   color: white;
   font-size: 1.2rem;
   font-weight: 600;
-  list-style: none;
 }
 
 .list .listItems {
   padding: 0;
   list-style: none;
+  margin-top: 15px;
 }
 
 .list .listItems .item {
-  margin: 2px 8px;
+  margin: 5px 12px;
   cursor: pointer;
 }
 
 .list .listItems .item:hover {
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
 .icon.iconActive .hamburguer {

@@ -16,6 +16,8 @@ const MenuPortal = () => {
     "COMISSÃO",
     "RELATÓRIOS NEWCON",
     "MURAL DE DADOS",
+    "WIKI GROSCON",
+    "USUÁRIOS",
   ];
 
   return (
