@@ -1,21 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { pagesList } from "../types/itemMenu";
 
 import "./MenuPortal.css";
-import { AiOutlineHome } from "react-icons/ai";
-import { ItemMenu } from "../types/itemMenu";
-import { AiOutlineSafetyCertificate } from "react-icons/ai";
 
 const MenuPortal = () => {
   const [active, setActive] = useState<boolean>(false);
 
+  const navigate = useNavigate();
+
   const ToggleMode = () => {
     setActive(!active);
   };
-
-  const pagesList: Array<ItemMenu> = [
-    { name: "HOME", icon: <AiOutlineHome /> },
-    { name: "SEGURO BRADESCO", icon: <AiOutlineSafetyCertificate /> },
-  ];
 
   return (
     <div className="MenuPortal">
@@ -26,8 +22,12 @@ const MenuPortal = () => {
         <div className="list">
           <ul className="listItems">
             {pagesList.map((item) => (
-              <li className="item">
-                {item.icon} - {item.name}
+              <li
+                className="item"
+                key={item.id}
+                onClick={() => navigate(item.path)}
+              >
+                {item.icon} - {item.page}
               </li>
             ))}
           </ul>
